@@ -1,0 +1,13 @@
+streamlit==1.32.0
+pandas
+plotly
+folium
+streamlit-folium
+ultralytics
+opencv-python-headless
+psycopg2-binary
+SQLAlchemy
+requests
+yt-dlp
+openpyxl
+bcrypt

@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  db_its:
+    image: postgres:15-alpine
+    container_name: postgres_its_container
+    restart: always
+    environment:
+      POSTGRES_USER: admin_its
+      POSTGRES_PASSWORD: SecretPassword123
+      POSTGRES_DB: its_hcm_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata_its:/var/lib/postgresql/data
+
+volumes:
+  pgdata_its:

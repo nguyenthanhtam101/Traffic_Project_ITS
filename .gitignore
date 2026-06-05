@@ -1,0 +1,17 @@
+# Bỏ qua các file rác của Python
+__pycache__/
+*.pyc
+
+# Bỏ qua môi trường ảo (nếu bạn đặt tên thư mục venv là doan_giao_thong)
+doan_giao_thong/
+venv/
+env/
+
+# Bỏ qua các video test quá nặng (GitHub giới hạn file < 100MB)
+*.mp4
+*.avi
+*.mov
+
+# Bỏ qua các ảnh phạt nguội sinh ra trong lúc test máy ở nhà
+evidence/
+saved_plates/
