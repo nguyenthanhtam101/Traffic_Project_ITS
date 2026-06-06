@@ -76,7 +76,6 @@ def init_db():
                 camera_name VARCHAR(255)
             );
         """))
-        # Tạo bảng chứa danh sách nút giao TomTom
         conn.execute(text("""
             CREATE TABLE IF NOT EXISTS tomtom_intersections (
                 name VARCHAR(255) PRIMARY KEY,
@@ -100,7 +99,7 @@ def init_db():
         if check_tomtom == 0:
             for name, coords in DEFAULT_TOMTOM.items():
                 lat, lon = coords.split(',')
-                conn.execute(text("INSERT INTO tomtom_intersections (name, lat, lon) VALUES (:name, :lat, :lon)"),
+                conn.execute(text("INSERT INTO cameras (name, url, lat, lon, img) VALUES (:name, :url, :lat, :lon, :img) ON CONFLICT (name) DO NOTHING"),
                     {"name": name, "lat": float(lat), "lon": float(lon)})
             conn.commit()
             print("✅ Đã nạp thành công 15 Nút giao TomTom mẫu vào PostgreSQL!")
