@@ -3,7 +3,7 @@ import pandas as pd
 from sqlalchemy import create_engine, text
 
 # Chuỗi kết nối tới Postgres trên Docker
-DATABASE_URL = "postgresql://postgres:nguyenthanhtam21@db.zrvmvkhhozxxznpwdwnk.supabase.co:5432/postgres"
+DATABASE_URL = "postgresql://postgres.zrvmvkhhozxxznpwdwnk:nguyenthanhtam21@aws-1-ap-southeast-1.pooler.supabase.com:6543/postgres"
 engine = create_engine(DATABASE_URL)
 
 # Dữ liệu hạt giống (Seed Data) - Sẽ tự động nạp vào Postgres ở lần chạy đầu tiên
