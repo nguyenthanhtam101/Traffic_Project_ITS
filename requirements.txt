@@ -14,3 +14,4 @@ requests
 yt-dlp
 openpyxl
 bcrypt
+easyocr
