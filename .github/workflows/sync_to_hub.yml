@@ -20,4 +20,5 @@ jobs:
         run: |
           git config --global user.email "tam43621@gmail.com"
           git config --global user.name "Nguyen Thanh Tam"
+          git config lfs.allowincompletepush true
           git push --force https://tam43621:$HF_TOKEN@huggingface.co/spaces/tam43621/its-hcm HEAD:main
