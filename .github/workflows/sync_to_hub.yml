@@ -2,7 +2,7 @@ name: Sync to Hugging Face Hub
 
 on:
   push:
-    branches: [main]
+    branches: [ "main", "master" ]
   workflow_dispatch:
 
 jobs:
@@ -18,4 +18,6 @@ jobs:
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: |
-          git push --force https://tam43621:$HF_TOKEN@huggingface.co/spaces/tam43621/its-hcm main
+          git config --global user.email "tam43621@gmail.com"
+          git config --global user.name "Nguyen Thanh Tam"
+          git push --force https://tam43621:$HF_TOKEN@huggingface.co/spaces/tam43621/its-hcm HEAD:main
