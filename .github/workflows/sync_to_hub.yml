@@ -11,14 +11,33 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 0
           lfs: true
       
-      - name: Push code to Hugging Face Space
+      - name: Deploy Clean Code to Hugging Face
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: |
-          git config --global user.email "tam43621@gmail.com"
-          git config --global user.name "Nguyen Thanh Tam"
-          git config lfs.allowincompletepush true
-          git push --force https://tam43621:$HF_TOKEN@huggingface.co/spaces/tam43621/its-hcm HEAD:main
+          # 1. Cho Robot quên đi toàn bộ lịch sử rác trong quá khứ
+          rm -rf .git
+          rm -rf temp/
+          
+          # 2. Tạo một cuốn sổ đăng ký hoàn toàn mới
+          git init -b main
+          git config user.email "tam43621@gmail.com"
+          git config user.name "Nguyen Thanh Tam"
+          
+          # 3. Kích hoạt LFS đóng gói lại từ đầu
+          git lfs install
+          git lfs track "*.pt"
+          git lfs track "*.onnx"
+          git lfs track "*.mp4"
+          git lfs track "*.csv"
+          git lfs track "*.png"
+          git lfs track "*.jpg"
+          
+          # 4. Gom toàn bộ code hiện tại
+          git add .
+          git commit -m "Deploy fresh code to Hugging Face"
+          
+          # 5. Gửi sang máy chủ Hugging Face
+          git push --force https://tam43621:$HF_TOKEN@huggingface.co/spaces/tam43621/its-hcm main:main
