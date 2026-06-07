@@ -15,3 +15,4 @@ env/
 # Bỏ qua các ảnh phạt nguội sinh ra trong lúc test máy ở nhà
 evidence/
 saved_plates/
+temp/
