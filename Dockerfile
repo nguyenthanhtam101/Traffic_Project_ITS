@@ -16,4 +16,4 @@ COPY . .
 RUN pip3 install -r requirements.txt
 
 EXPOSE 7860
-ENTRYPOINT ["streamlit", "run", "main.py", "--server.port=7860", "--server.address=0.0.0.0"]
+ENTRYPOINT ["streamlit", "run", "main.py", "--server.port=7860", "--server.address=0.0.0.0", "--server.enableCORS=false", "--server.enableXsrfProtection=false", "--server.maxUploadSize=500"]

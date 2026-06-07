@@ -81,7 +81,7 @@ def render_tab_camera():
     tab_offline, tab_live, tab_api = st.sidebar.tabs(["📂 Offline", "🌐 YouTube", "🌍 OpenCCTV"])
     
     with tab_offline:
-        uploaded_file = st.file_uploader("Tải Video Lên", type=["mp4", "avi", "mov", "jpg"], label_visibility="collapsed")
+        uploaded_file = st.file_uploader("Tải Video Lên", type=["mp4", "avi", "mov", "jpg", "png"], label_visibility="collapsed")
         btn_run_offline = st.button("▶ CHẠY VIDEO",type="primary" ,use_container_width=True)
             
     with tab_live:
